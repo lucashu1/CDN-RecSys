@@ -9,7 +9,13 @@ visualize the models' learning curves.
 
 ### Motivation
 
-(Coming Soon)
+Content Delivery Networks (CDNs) are great for getting your digital content onto the devices of end-users
+around the world in an efficient way -- however, there are so many different CDN providers and services
+available now that it can be hard for new internet content providers (ICPs) to know which service to pick.
+
+Using data on Chinese ICPs from some researchers in Nanjing, China, I formulated CDN selection as a recommender systems problem, with ICPs as users and CDN providers as items. I first constructed an interactions matrix of existing CDN purchases, as well as feature vectors for both the ICPs and CDNs in the dataset. The result was a hybrid recommender system model that could suggest CDN providers to ICPs in both warm-start and cold-start scenarios.
+
+Although I am not yet able to publically release the raw data, this project may still serve as a valuable first step (or perhaps even just a proof of concept) toward future applications of recommender systems for CDN selection.
 
 ### Prerequisites
 
@@ -24,15 +30,17 @@ the LightFM.ipynb file.
 
 ### Files Included
 
-* **LightFM.ipynb** - Main recommender system script
+* **LightFM.ipynb** - Main recommender system notebook
 * **20170629-interactions-mappings.pkl** - (interactions, iidx_to_cdn, cdn_to_iidx, uidx_to_icp, icp_to_uidx) tuple
   * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions (CSR-sparse matrix)
-  * icp_to_uidx: ICP name (URL/domain) to user index mapping (Python dict)
-  * uidx_to_icp: User index to ICP name (URL/domain) mapping (Python dict)
-  * cdn_to_iidx: CDN code (3-digit) to item index mapping (Python dict)
-  * iidx_to_cdn: Item index to CDN code (3-digit) mapping (Python dict)
+  * icp_to_uidx: ICP name to user index mapping (Python dict)
+  * uidx_to_icp: User index to ICP name mapping (Python dict)
+  * cdn_to_iidx: CDN code to item index mapping (Python dict)
+  * iidx_to_cdn: Item index to CDN code mapping (Python dict)
 * **20170703-cdn-feature-vectors.pkl** - cdn_features array, rows = one-hot feature vectors (CSR-sparse matrix)
+  (Created from raw data using sklearn's DictVectorizer)
 * **20170703-icp-feature-vectors.pkl** - icp_features array, rows = one-hot feature vectors (CSR-sparse matrix)
+  (Created from raw data using sklearn's DictVectorizer)
 * **20170705-train-test.pkl** - (train, test) matrices tuple (CSR-sparse matrices)
 * **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple (CSR-sparse matrices)
 
