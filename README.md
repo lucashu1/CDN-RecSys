@@ -7,11 +7,17 @@ visualize the models' learning curves.
 
 (Created at Tsinghua University's Big Data Technology R&D Center as part of USC Viterbi's Research Abroad program.)
 
-### Motivation
+## Motivation
 
-[Add later]
+Content Delivery Networks (CDNs) are great for getting your digital content onto the devices of end-users
+around the world in an efficient way; however, there are so many different CDN providers and services
+available now that it can be hard for new internet content providers (ICPs) to know which service to pick.
 
-### Prerequisites
+Using data on Chinese ICPs from some researchers in Nanjing, China, I formulated CDN selection as a recommender systems problem, with ICPs as users and CDN providers as items. I first constructed an interactions matrix of existing CDN purchases, as well as feature vectors for both the ICPs and CDNs in the dataset. The result was a hybrid recommender system model that could suggest CDN providers to ICPs in both warm-start and cold-start scenarios.
+
+Although I don't have permission to release the raw data (I've hidden the actual CDN provider names, along with most of the raw ICP/CDN data tables), this project may still serve as a valuable first step (or perhaps even just a proof of concept) toward future applications of recommender systems for CDN selection.
+
+## Prerequisites
 
 If you would like to run the notebook locally, you'll need:
 * Python >= 2.7, preferably via [Anaconda](https://www.continuum.io/downloads)
@@ -19,24 +25,30 @@ If you would like to run the notebook locally, you'll need:
 * [LightFM](https://lyst.github.io/lightfm/docs/home.html) Recommender System Library (available via `pip`)
 * [Scikit-Optimize](https://scikit-optimize.github.io) (available via `pip`)
 
-Then, go ahead and clone this repository, create a Jupyter session within the repo directory, and open
-the .ipynb file.
+Then, clone this repository, create a Jupyter session within the repo directory, and open
+the LightFM.ipynb file.
 
-### Files Included
+## Files Included
 
-* **LightFM.ipynb** - Main recommender system script
+* **LightFM.ipynb** - Main recommender system notebook
 * **20170629-interactions-mappings.pkl** - (interactions, iidx_to_cdn, cdn_to_iidx, uidx_to_icp, icp_to_uidx) tuple
-  * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions
-  * icp_to_uidx: ICP name (URL/domain) to user index mapping
-  * uidx_to_icp: User index to ICP name (URL/domain) mapping
-  * cdn_to_iidx: CDN code (3-digit) to item index mapping
-  * iidx_to_cdn: Item index to CDN code (3-digit) mapping
-* **20170703-cdn-feature-vectors.pkl** - cdn_features array (rows = one-hot feature vectors)
-* **20170703-icp-feature-vectors.pkl** - icp_features array (rows = one-hot feature vectors)
-* **20170705-train-test.pkl** - (train, test) matrices tuple
-* **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple
+  * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions (CSR-sparse matrix)
+  * icp_to_uidx: ICP name to user index mapping (Python dict)
+  * uidx_to_icp: User index to ICP name mapping (Python dict)
+  * cdn_to_iidx: CDN code to item index mapping (Python dict)
+  * iidx_to_cdn: Item index to CDN code mapping (Python dict)
+* **20170703-cdn-feature-vectors.pkl** - cdn_features array, rows = one-hot feature vectors (CSR-sparse matrix)
+  
+  (Created from raw data using sklearn's DictVectorizer)
+  
+* **20170703-icp-feature-vectors.pkl** - icp_features array, rows = one-hot feature vectors (CSR-sparse matrix)
+  
+  (Created from raw data using sklearn's DictVectorizer)
+  
+* **20170705-train-test.pkl** - (train, test) matrices tuple (CSR-sparse matrices)
+* **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple (CSR-sparse matrices)
 
-### Built With
+## Built With
 
 * [LightFM](https://lyst.github.io/lightfm/docs/home.html) - Recommender System Library
 * [Pandas](https://pandas.pydata.org) - Data Preprocessing
@@ -44,12 +56,12 @@ the .ipynb file.
 * [Scikit-learn](http://scikit-learn.org/stable/) - For feature vectorization
 * [Numpy](http://www.numpy.org)/[Scipy](https://www.scipy.org/scipylib/index.html) - For everything matrix-related
 
-### Supplementary Materials
+## Additional Materials
 
-* Project Wiki (link coming soon)
-* Project Slides (PPT) (link coming soon)
+* [Project Wiki](https://github.com/lucashu1/CDN-RecSys/wiki)
+* [Project Slides (PPT)](https://drive.google.com/open?id=0B9a6HGclbze9SW04V0h3dzVFaXM)
 
-### Acknowledgments
+## Acknowledgments
 
 * Professor Yin Hao, Professor Yu Longqiang (Tsinghua University)
 * Zha Cong - My host/partner student at Tsinghua University
