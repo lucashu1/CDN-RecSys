@@ -31,6 +31,9 @@ the LightFM.ipynb file.
 ## Files Included
 
 * **LightFM.ipynb** - Main recommender system notebook
+* **Read_Interactions.ipynb** - Interactions preprocessing (not runnable)
+* **Read_ICP_Features.ipynb** - User (ICP) feature preprocessing (not runnable)
+* **Read_CDN_Features.ipynb** - Item (CDN) feature preprocessing (not runnable)
 * **20170629-interactions-mappings.pkl** - (interactions, iidx_to_cdn, cdn_to_iidx, uidx_to_icp, icp_to_uidx) tuple
   * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions (CSR-sparse matrix)
   * icp_to_uidx: ICP name to user index mapping (Python dict)
