@@ -19,22 +19,22 @@ If you would like to run the notebook locally, you'll need:
 * [LightFM](https://lyst.github.io/lightfm/docs/home.html) Recommender System Library (available via `pip`)
 * [Scikit-Optimize](https://scikit-optimize.github.io) (available via `pip`)
 
-Then, go ahead and clone this repository, create a Jupyter session within the repo directory, and open
-the .ipynb file.
+Then, clone this repository, create a Jupyter session within the repo directory, and open
+the LightFM.ipynb file.
 
 ### Files Included
 
 * **LightFM.ipynb** - Main recommender system script
 * **20170629-interactions-mappings.pkl** - (interactions, iidx_to_cdn, cdn_to_iidx, uidx_to_icp, icp_to_uidx) tuple
-  * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions
-  * icp_to_uidx: ICP name (URL/domain) to user index mapping
-  * uidx_to_icp: User index to ICP name (URL/domain) mapping
-  * cdn_to_iidx: CDN code (3-digit) to item index mapping
-  * iidx_to_cdn: Item index to CDN code (3-digit) mapping
-* **20170703-cdn-feature-vectors.pkl** - cdn_features array (rows = one-hot feature vectors)
-* **20170703-icp-feature-vectors.pkl** - icp_features array (rows = one-hot feature vectors)
-* **20170705-train-test.pkl** - (train, test) matrices tuple
-* **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple
+  * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions (CSR-sparse matrix)
+  * icp_to_uidx: ICP name (URL/domain) to user index mapping (Python dict)
+  * uidx_to_icp: User index to ICP name (URL/domain) mapping (Python dict)
+  * cdn_to_iidx: CDN code (3-digit) to item index mapping (Python dict)
+  * iidx_to_cdn: Item index to CDN code (3-digit) mapping (Python dict)
+* **20170703-cdn-feature-vectors.pkl** - cdn_features array, rows = one-hot feature vectors (CSR-sparse matrix)
+* **20170703-icp-feature-vectors.pkl** - icp_features array, rows = one-hot feature vectors (CSR-sparse matrix)
+* **20170705-train-test.pkl** - (train, test) matrices tuple (CSR-sparse matrices)
+* **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple (CSR-sparse matrices)
 
 ### Built With
 
