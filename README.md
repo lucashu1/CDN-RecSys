@@ -45,13 +45,7 @@ the LightFM.ipynb file.
   * cdn_to_iidx: CDN code to item index mapping (Python dict)
   * iidx_to_cdn: Item index to CDN code mapping (Python dict)
 * **20170703-cdn-feature-vectors.pkl** - cdn_features array, rows = one-hot feature vectors (CSR-sparse matrix)
-  
-  (Created from raw data using sklearn's DictVectorizer)
-  
-* **20170703-icp-feature-vectors.pkl** - icp_features array, rows = one-hot feature vectors (CSR-sparse matrix)
-  
-  (Created from raw data using sklearn's DictVectorizer)
-  
+* **20170703-icp-feature-vectors.pkl** - icp_features array, rows = one-hot feature vectors (CSR-sparse matrix)  
 * **20170705-train-test.pkl** - (train, test) matrices tuple (CSR-sparse matrices)
 * **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple (CSR-sparse matrices)
 
