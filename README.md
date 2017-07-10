@@ -58,7 +58,7 @@ the LightFM.ipynb file.
 
 ## Additional Materials
 
-* Project Wiki (link coming soon)
+* [Project Wiki](https://github.com/lucashu1/CDN-RecSys/wiki)
 * [Project Slides (PPT)](https://drive.google.com/open?id=0B9a6HGclbze9SW04V0h3dzVFaXM)
 
 ## Acknowledgments
