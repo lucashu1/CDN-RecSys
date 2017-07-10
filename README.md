@@ -9,7 +9,7 @@ visualize the models' learning curves.
 
 ### Motivation
 
-[Add later]
+(Coming Soon)
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ the .ipynb file.
 ### Supplementary Materials
 
 * Project Wiki (link coming soon)
-* Project Slides (PPT) (link coming soon)
+* [Project Slides (PPT)](https://drive.google.com/open?id=0B9a6HGclbze9SW04V0h3dzVFaXM)
 
 ### Acknowledgments
 
