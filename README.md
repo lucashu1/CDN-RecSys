@@ -10,12 +10,12 @@ visualize the models' learning curves.
 ## Motivation
 
 Content Delivery Networks (CDNs) are great for getting your digital content onto the devices of end-users
-around the world in an efficient way -- however, there are so many different CDN providers and services
+around the world in an efficient way; however, there are so many different CDN providers and services
 available now that it can be hard for new internet content providers (ICPs) to know which service to pick.
 
 Using data on Chinese ICPs from some researchers in Nanjing, China, I formulated CDN selection as a recommender systems problem, with ICPs as users and CDN providers as items. I first constructed an interactions matrix of existing CDN purchases, as well as feature vectors for both the ICPs and CDNs in the dataset. The result was a hybrid recommender system model that could suggest CDN providers to ICPs in both warm-start and cold-start scenarios.
 
-Although I am not yet able to publically release the raw data, this project may still serve as a valuable first step (or perhaps even just a proof of concept) toward future applications of recommender systems for CDN selection.
+Although I don't have permission to release the raw data (I've hidden the actual CDN provider names, along with most of the raw ICP/CDN data tables), this project may still serve as a valuable first step (or perhaps even just a proof of concept) toward future applications of recommender systems for CDN selection.
 
 ## Prerequisites
 
