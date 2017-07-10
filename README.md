@@ -19,7 +19,7 @@ Although I don't have permission to release the raw data (I've hidden the actual
 
 ## Prerequisites
 
-If you would like to run the notebook locally, you'll need:
+If you would like to run the main notebook locally, you'll need:
 * Python >= 2.7, preferably via [Anaconda](https://www.continuum.io/downloads)
 * The [SciPy Stack](https://www.scipy.org/stackspec.html) (included in Anaconda builds)
 * [LightFM](https://lyst.github.io/lightfm/docs/home.html) Recommender System Library (available via `pip`)
@@ -30,10 +30,14 @@ the LightFM.ipynb file.
 
 ## Files Included
 
+#### IPython Notebooks
+
 * **LightFM.ipynb** - Main recommender system notebook
 * **Read_Interactions.ipynb** - Interactions preprocessing (not runnable)
 * **Read_ICP_Features.ipynb** - User (ICP) feature preprocessing (not runnable)
 * **Read_CDN_Features.ipynb** - Item (CDN) feature preprocessing (not runnable)
+
+#### Pickle Dumps
 * **20170629-interactions-mappings.pkl** - (interactions, iidx_to_cdn, cdn_to_iidx, uidx_to_icp, icp_to_uidx) tuple
   * Interactions: rows = users (ICPs), cols = items (CDNs), nonzero entries = interactions (CSR-sparse matrix)
   * icp_to_uidx: ICP name to user index mapping (Python dict)
