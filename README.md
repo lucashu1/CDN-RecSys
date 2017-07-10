@@ -7,7 +7,7 @@ visualize the models' learning curves.
 
 (Created at Tsinghua University's Big Data Technology R&D Center as part of USC Viterbi's Research Abroad program.)
 
-### Motivation
+## Motivation
 
 Content Delivery Networks (CDNs) are great for getting your digital content onto the devices of end-users
 around the world in an efficient way -- however, there are so many different CDN providers and services
@@ -17,7 +17,7 @@ Using data on Chinese ICPs from some researchers in Nanjing, China, I formulated
 
 Although I am not yet able to publically release the raw data, this project may still serve as a valuable first step (or perhaps even just a proof of concept) toward future applications of recommender systems for CDN selection.
 
-### Prerequisites
+## Prerequisites
 
 If you would like to run the notebook locally, you'll need:
 * Python >= 2.7, preferably via [Anaconda](https://www.continuum.io/downloads)
@@ -28,7 +28,7 @@ If you would like to run the notebook locally, you'll need:
 Then, clone this repository, create a Jupyter session within the repo directory, and open
 the LightFM.ipynb file.
 
-### Files Included
+## Files Included
 
 * **LightFM.ipynb** - Main recommender system notebook
 * **20170629-interactions-mappings.pkl** - (interactions, iidx_to_cdn, cdn_to_iidx, uidx_to_icp, icp_to_uidx) tuple
@@ -48,7 +48,7 @@ the LightFM.ipynb file.
 * **20170705-train-test.pkl** - (train, test) matrices tuple (CSR-sparse matrices)
 * **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple (CSR-sparse matrices)
 
-### Built With
+## Built With
 
 * [LightFM](https://lyst.github.io/lightfm/docs/home.html) - Recommender System Library
 * [Pandas](https://pandas.pydata.org) - Data Preprocessing
@@ -56,12 +56,12 @@ the LightFM.ipynb file.
 * [Scikit-learn](http://scikit-learn.org/stable/) - For feature vectorization
 * [Numpy](http://www.numpy.org)/[Scipy](https://www.scipy.org/scipylib/index.html) - For everything matrix-related
 
-### Supplementary Materials
+## Additional Materials
 
 * Project Wiki (link coming soon)
 * [Project Slides (PPT)](https://drive.google.com/open?id=0B9a6HGclbze9SW04V0h3dzVFaXM)
 
-### Acknowledgments
+## Acknowledgments
 
 * Professor Yin Hao, Professor Yu Longqiang (Tsinghua University)
 * Zha Cong - My host/partner student at Tsinghua University
