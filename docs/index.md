@@ -10,7 +10,7 @@
 <li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#conclusion">Conclusion</a></li>
 </ol>
 
-## Introduction
+## [Introduction](#intro)
 This summer, I was lucky enough to be invited to [Tsinghua University's Network and Big Data Technology R&D Center](http://cdn.riit.tsinghua.edu.cn) as a part of USC Viterbi's Research Abroad program. During my six weeks in China, I spent the weekdays working full-time in the lab, and the weekends exploring places like the Great Wall at Huanghuacheng, the Terracotta Army Museum in Xi'an, and the Panda Research Base in Chengdu -- all the while having some of the best food of my life.
 
 As the name of the research lab would suggest, much of the work in the lab was focused on topics like computer networking (including content delivery networks, or CDNs) and distributed computing, with some additional work in data science and machine learning. The people in the lab told me that my research project during the six-week program didn't necessarily have to fall within one of these categories. However, given the lab's existing research focuses, it seemed to make sense to me when my partner/host student suggested that I try my hand at creating a recommender system for CDN selection as my project, by viewing internet content providers (ICPs, i.e. websites) as users and CDN providers as items. 
@@ -23,7 +23,7 @@ The next section describes the process that followed.
 
 ## CDN-RecSys Project
 
-### 1. Playing Catch-Up
+### [1. Playing Catch-Up](#playing-catch-up)
 
 My first step, knowing almost nothing about recommender systems except for the 30-minutes worth of knowledge I had forgotten and then re-accumulated from Andrew Ng's Coursera video lectures on Machine Learning, was to go through some basic tutorials to learn the foundations of recommender systems, and then to do a whole lot of literature review to get myself up-to-speed on the current state of recommender systems research.
 
@@ -37,7 +37,7 @@ I started by learning about basic concepts like the distinction between content-
 
 It was certainly a lot to take in, but after a while, I felt that I had gained enough of an understanding of recommender systems to be able to apply these ideas to my own project.
 
-### 2. Data Preprocessing
+### [2. Data Preprocessing](#data-preprocessing)
 
 A couple weeks in, my partner let me know that he had received most of the data from the folks in Nanjing in .csv format (about 3GB total). It appeared to be data that was mostly collected from a web crawler that was visiting a bunch of Chinese websites and storing information like what CDNs the websites used, how many bytes of text/images/video were on each webpage, CDN quality of service statistics like DNS resolution times, packet loss, etc. Since there's already plenty of research on measuring CDN performance, I figured I would leave the quality of service statistics out for now. All I really needed were the ICP (internet content provider)-CDN interactions for implicit feedback, as well as some information on the ICPs and CDNs that I could turn into user and item features (to create a hybrid recommendation model).
 
@@ -54,7 +54,7 @@ For the quantitative features (bytes of web content and number of IP addresses),
 
 In the end, I had an interactions matrix (with ICPs as rows and CDNs as columns), an array of one-hot feature vectors for the ICPs, and another array of one-hot feature vectors for the CDNs. With these preprocessed arrays set up, I was now ready to start building my recommendation model.
 
-### 3. Creating the Recommendation Models
+### [3. Creating the Recommendation Models](#creating-the-recommendation-models)
 
 I knew that having to write the code for the recommender systems by hand would have been a huge pain. Thankfully, Maciej Kula, the author of the LightFM hybrid recommendation algorithm whose paper I linked earlier, created a [LightFM Python library](https://github.com/lyst/lightfm) with implementations of his recommendation algorithm built in. Essentially, what the LightFM algorithm does is instead of just learning latent vector representations for each user/item (as is the case in traditional MF-based collaborative filtering), LightFM learns latent vector representations for user/item *metadata* (i.e. features/tags). (You can include unique IDs in the metadata as well if you want to still have some unique component for each user/item.) Then, you get the total representation for a user/item by summing over each of its features' latent vectors. That way, you can augment the core collaborative filtering component with some content-based learning via the user/item feature vectors, making this a hybrid recommendation model. You can think of this like word2vec, but for user/item features instead of for words/phrases.
 
@@ -73,7 +73,7 @@ Since I wanted to see if adding the ICP and CDN features actually helped generat
 
 The next section will talk about how I evaluated each of these models to find out which one performed the best.
 
-### 4. Model Evaluation
+### [4. Model Evaluation](#model-evaluation)
 
 To create an unbiased sample of interactions with which to test the different recommendation models, I had randomly selected 20% of the interactions from the interactions matrix and moved them into a separate `test` array, keeping the remaining 80% in a `train` array (which, as the name suggests, was used to train each of the recommendation models).
 
@@ -85,7 +85,7 @@ For each of the 4 models, I then used [scikit-optimize](https://scikit-optimize.
 
 Finally, I went back and analyzed the train-test split to see which `test` users were warm-start (i.e. already had some interactions in the training set) and which `test` users were cold-start (i.e. no interactions in the training set/completely new to the model), and then used this information to further split the `test` array into separate `test_warm` and `test_cold` interactions matrices. This would allow me to later see how the recommendations model did in both warm-start and cold-start scenarios. (Typically, cold-start scenarios are much more difficult for collaborative filtering models to tackle, since they rely heavily on user behavior to generate predictions.)
 
-### 5. Results
+### [5. Results](#results)
 
 When all was said and done, and the scikit-optimize commands had all finished doing their thing, here are the optimal overall test p@5 scores that I got for each model:
 
@@ -108,7 +108,7 @@ This result was somewhat expected because in the cold-start case, in which the r
 
 This means that even if you're a new user, the model will be able to do more than simply show you a New York Times best seller list. (I wonder what's topping "Hardcover Fiction" these days?)
 
-### 6. Potential Next Steps
+### [6. Potential Next Steps](#potential-next-steps)
 
 If I had more time, I would want to do some extra feature engineering to see if I could pull some meaningful CDN features from the raw data. Perhaps I just transformed the current data wrong; perhaps I need to consider completely different data altogether. Either way, it'd be nice to see some performance jump from adding in features to help characterize each CDN provider.
 
@@ -116,7 +116,7 @@ I would also want to see if different models could perform any better than Light
 
 Finally, and most importantly, I would want to acquire some **more data** before turning this into a more finalized project, or even an academic paper. The current dataset included about 2,000 unique ICPs and only 40 unique CDNs: likely not enough information to be all that helpful in the real world. Since the researchers in Nanjing who collected the data that I used seemed to have used some sort of web crawler to navigate around the Chinese internet, perhaps it would be possible to do something similar for the worldwide web, and not just within China. The head professor of the lab, Prof. Yin Hao, seemed to think that collecting data from the U.S., which has many more CDNs services available, would produce a lot more meaningful results.
 
-## Conclusion
+## [Conclusion](#conclusion)
 
 I recognize that this project, as well as my own understanding of recommender systems, still has a ways to go -- but viewed in terms of a learning experience, keeping in mind that I knew almost nothing about recommender systems my first day in the program, I feel that it's been pretty amazing. (It's also exposed me to a lot of other really cool concepts like latent vector representations, which makes me want to learn a lot more about ideas like word2vec.) 
 
