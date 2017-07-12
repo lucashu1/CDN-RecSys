@@ -1,12 +1,14 @@
 ### Table of Contents:
-0. [Introduction](https://github.com/lucashu1/CDN-RecSys/wiki#introduction)
-1. [Playing Catch-Up](https://github.com/lucashu1/CDN-RecSys/wiki#1-playing-catch-up)
-2. [Data Preprocessing](https://github.com/lucashu1/CDN-RecSys/wiki#2-data-preprocessing)
-3. [Creating the Recommendation Models](https://github.com/lucashu1/CDN-RecSys/wiki#3-creating-the-recommendation-models)
-4. [Model Evaluation](https://github.com/lucashu1/CDN-RecSys/wiki#4-model-evaluation)
-5. [Results](https://github.com/lucashu1/CDN-RecSys/wiki#5-results)
-6. [Next Steps](https://github.com/lucashu1/CDN-RecSys/wiki#6-next-steps)
-7. [Conclusion](https://github.com/lucashu1/CDN-RecSys/wiki#conclusion)
+<ol start="0">
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#introduction">Introduction</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#1-playing-catch-up">Playing Catch-Up</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#2-data-preprocessing">Data Preprocessing</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#3-creating-the-recommendation-models">Creating the Recommendation Models</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#4-model-evaluation">Model Evaluation</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#5-results">Results</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#6-next-steps">Next Steps</a></li>
+<li><a href="https://github.com/lucashu1/CDN-RecSys/wiki#conclusion">Conclusion</a></li>
+</ol>
 
 ## Introduction
 This summer, I was lucky enough to be invited to [Tsinghua University's Network and Big Data Technology R&D Center](http://cdn.riit.tsinghua.edu.cn) as a part of USC Viterbi's Research Abroad program. During my six weeks in China, I spent the weekdays working full-time in the lab, and the weekends exploring places like the Great Wall at Huanghuacheng, the Terracotta Army Museum in Xi'an, and the Panda Research Base in Chengdu -- all the while having some of the best food of my life.
