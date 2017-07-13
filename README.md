@@ -66,5 +66,6 @@ the LightFM.ipynb file.
 
 * Professor Yin Hao, Professor Yu Longqiang (Tsinghua University)
 * Zha Cong - My host/partner student at Tsinghua University
+* Mr. Feng Deng - Donor and creator of the USC Viterbi/Tsinghua Summer Research Program
 * Maciej Kula (Lyst) - LightFM Author
 * Ethan Rosenthal - For his [blog posts](http://blog.ethanrosenthal.com) on recommender systems
