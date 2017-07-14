@@ -48,6 +48,11 @@ the LightFM.ipynb file.
 * **20170703-icp-feature-vectors.pkl** - icp_features array, rows = one-hot feature vectors (CSR-sparse matrix)  
 * **20170705-train-test.pkl** - (train, test) matrices tuple (CSR-sparse matrices)
 * **20170705-warm-cold.pkl** - (test_warm, test_cold) matrices tuple (CSR-sparse matrices)
+* **20170714-opt-models.pkl** - tuple of trained LightFM model objects
+  * Order: (opt_model_all, opt_model_none, opt_model_icp, opt_model_cdn)
+* **20170714-opt-hyperparams.pkl** - tuple of optimal hyperparameters for each model
+  * Order: (opt_hyperparams_all, opt_hyperparams_none, opt_hyperparams_icp, opt_hyperparams_cdn)
+  * Each element contains: (opt_epochs_[name], opt_lr_[name], opt_no_components_[name], opt_item_alpha_[name], opt_user_alpha_[name])
 
 ## Built With
 
