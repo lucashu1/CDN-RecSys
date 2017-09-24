@@ -3,7 +3,7 @@
 An application of the LightFM hybrid recommender system library for suggesting CDN (content delivery network) 
 providers to various websites. Includes examples of using LightFM to create both hybrid and pure collaborative
 filtering recommendation models, scikit-optimize to run hyperparameter efficient searches, and matplotlib to
-visualize the models' learning curves. Detailed write-up [here](https://github.com/lucashu1/CDN-RecSys/wiki).
+visualize the models' learning curves. **Detailed write-up [here](https://github.com/lucashu1/CDN-RecSys/wiki)**.
 
 (Created at Tsinghua University's Big Data Technology R&D Center as part of USC Viterbi's Research Overseas program.)
 
