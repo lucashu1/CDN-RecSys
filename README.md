@@ -9,7 +9,8 @@ visualize the models' learning curves. **Detailed write-up [here](https://github
 
 **If you use this repo for your work, please cite the corresponding DOI:**
 
-[![DOI](https://zenodo.org/badge/111464159.svg)](https://zenodo.org/badge/latestdoi/111464159)
+[![DOI](https://zenodo.org/badge/96486645.svg)](https://zenodo.org/badge/latestdoi/96486645)
+
 
 ## Motivation
 
