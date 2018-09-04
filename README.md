@@ -1,5 +1,7 @@
 # CDN-RecSys: A Network That Works
 
+[![DOI](https://zenodo.org/badge/111464159.svg)](https://zenodo.org/badge/latestdoi/111464159)
+
 An application of the LightFM hybrid recommender system library for suggesting CDN (content delivery network) 
 providers to various websites. Includes examples of using LightFM to create both hybrid and pure collaborative
 filtering recommendation models, scikit-optimize to run hyperparameter efficient searches, and matplotlib to
